@@ -19,9 +19,9 @@ using Goal
 
 # Global observations (input state for the DRL model and variables for reward assignment and episode termination)
 type SimState {
-    palletState: number<0 .. 4 step 1>[15], # 0 if pallet i-th rack cell is empty, otherwise the number of the pallet's destination
-    shuttle1StartPosition: number<0 .. 14 step 1>, #current position index of shuttle 1
-    shuttle2StartPosition: number<0 .. 14 step 1>, #current position index of shuttle 2
+    pallet_state: number<0 .. 4 step 1>[15], # 0 if pallet i-th rack cell is empty, otherwise the number of the pallet's destination
+    shuttle1_start_position: number<0 .. 14 step 1>, #current position index of shuttle 1
+    shuttle2_start_position: number<0 .. 14 step 1>, #current position index of shuttle 2
     destination: number<0 .. 1 step 1>[4], #0 if the i-th destination is occupied, 1 if it is free
     shuttle_is_delivering: number<-1 .. 13 step 1>[2], #-1 if the shuttle is not transporting pallets, otherwise a discrete index of the final position of the shuttle to arrive at
     distance: number<-14 .. 14 step 1>, #distance between the two shuttles (shuttle1StartPosition - shuttle2StartPosition)
@@ -35,9 +35,9 @@ type SimState {
 
 # Input state for the DRL model
 type SimSubState {
-    palletState: number<0 .. 4 step 1>[15],
-    shuttle1StartPosition: number<0 .. 14 step 1>,
-    shuttle2StartPosition: number<0 .. 14 step 1>,
+    pallet_state: number<0 .. 4 step 1>[15],
+    shuttle1_start_position: number<0 .. 14 step 1>,
+    shuttle2_start_position: number<0 .. 14 step 1>,
     destination: number<0 .. 1 step 1>[4],
     shuttle_is_delivering: number<-1 .. 13 step 1>[2],
     distance: number<-14 .. 14 step 1>
