@@ -152,6 +152,13 @@ respects the safety distance.
 
 ![image](/img/assessment_screen_2.PNG)
 
+In the following plot, on the other hand, we can see that in these two episodes 
+there are no invalid actions and the reward always takes a value of -1.5 
+adding up to 10 when a shuttle picks up a pallet and takes it to its destination 
+since there are no collisions.
+
+![image](/img/assessment_screen_3.PNG)
+
 #### Simulation mode
 simulation can be performed in 3 modes:
 - Manual, to manage shuttles manually
