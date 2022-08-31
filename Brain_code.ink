@@ -82,7 +82,7 @@ graph (input: SimSubState): SimAction {
             training {
                 EpisodeIterationLimit: 150,
                 NoProgressIterationLimit: 12000000,
-                TotalIterationLimit: 100000000
+                TotalIterationLimit: 30000000
             }
         }
     }
