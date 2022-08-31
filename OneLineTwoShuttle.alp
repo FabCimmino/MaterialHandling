@@ -475,12 +475,6 @@ shuttle[1].rectangle.setFillColor(new Color(34,139,34));]]></StartupCode>
 			start = true;
 			break;
 		}
-	/*
-	for(int i = 0; i < 15 ; i++){
-		distance_pallet_rack_1[i] = (int) Math.round((shuttle[0].getX() - 80) / 60) - i;
-		distance_pallet_rack_2[i] = (int) Math.round((shuttle[1].getX() - 80) / 60) - i;
-	}
-	*/
 	
 	if((!shuttle[0].isMoving() || !shuttle[1].isMoving()) &&
 		( start || 
@@ -992,7 +986,7 @@ if(mode == 2 && finish_simulation == 1){
 						<Parameter>
 							<Name><![CDATA[simulatorName]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[""]]></Code>
+								<Code><![CDATA["OneLineTwoShuttle"]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3697,6 +3691,9 @@ else {
 			<Parameters>			
 				<Parameter>
 					<ParameterName><![CDATA[mode]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[2]]></Code>
+					</ParameterValue>
 				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
@@ -3732,7 +3729,7 @@ else {
 				<FinalTime><![CDATA[3600.0]]></FinalTime>	
 			</ModelTimeProperties>
 			<ObservationField>
-				<Name><![CDATA[palletState]]></Name>
+				<Name><![CDATA[pallet_state]]></Name>
 				<Type><![CDATA[int[]]]></Type>
 			</ObservationField>
 			<ObservationField>
@@ -3756,11 +3753,11 @@ else {
 				<Type><![CDATA[int]]></Type>
 			</ObservationField>
 			<ObservationField>
-				<Name><![CDATA[shuttle1StartPosition]]></Name>
+				<Name><![CDATA[shuttle1_start_position]]></Name>
 				<Type><![CDATA[int]]></Type>
 			</ObservationField>
 			<ObservationField>
-				<Name><![CDATA[shuttle2StartPosition]]></Name>
+				<Name><![CDATA[shuttle2_start_position]]></Name>
 				<Type><![CDATA[int]]></Type>
 			</ObservationField>
 			<ObservationField>
@@ -3772,9 +3769,9 @@ else {
 				<Type><![CDATA[int]]></Type>
 			</ObservationField>
 			<ObservationCode><![CDATA[//observations
-palletState = root.pallet_rack_state;
-shuttle1StartPosition = (int) Math.round((root.shuttle[0].getX() - 80) / 60);
-shuttle2StartPosition = (int) Math.round((root.shuttle[1].getX() - 80) / 60);
+pallet_state = root.pallet_rack_state;
+shuttle1_start_position = (int) Math.round((root.shuttle[0].getX() - 80) / 60);
+shuttle2_start_position = (int) Math.round((root.shuttle[1].getX() - 80) / 60);
 distance = (int) Math.round((root.shuttle[1].getX() - 80) / 60) - 
  			(int) Math.round((root.shuttle[0].getX() - 80) / 60);
 destination = root.destination_is_available;
