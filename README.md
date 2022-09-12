@@ -36,7 +36,7 @@ in the sub-state for training the model.
 
 | Variable      | Domain          |  Type    | Description |
 |:-----------:|:--------------:|:--------:|:-----:| 
-|pallet_state | [0,4]          | array[15] of discrete integer values | 0 if pallet rack cell is empty, otherwise the number of the pallet's destination|
+|pallet_state | [0,4]          | array[15] of discrete integer values | 4 if pallet rack cell is empty, otherwise the number of the pallet's destination (0 -> destination 1, 1 -> destination 2, 2 -> destination 3, 3 -> destination 4|
 |shuttle1_start_position|[0,14] | discrete integer value | current position index of shuttle 1|
 |shuttle2_start_position| [0,14] | discrete integer value| current position index of shuttle 2|
 |destination| [0,1] | array[4] of discrete integer values| 0 if the i-th destination is occupied, 1 if it is free|
