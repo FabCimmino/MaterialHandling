@@ -45,7 +45,8 @@ in the sub-state for training the model.
 
 The *pallet_state* array is used by the model to figure out which cells of the pallet rack 
 contain pallets and their destinations through spatial mapping (the i-th cell of the array 
-represents the i-th cell of the pallet rack). \
+represents the i-th cell of the pallet rack). Note that the first and last two pallets in the pallet 
+rack can only be transported to destination 1 or 2 and destination 3 or 4 respectively.\
 The variables *shuttle1_start_position* and *shuttle2_start_position* contain the discrete 
 position of the two shuttles at each instant so that the model can keep track of them. \
 The *destination* array indicates with a spatial mapping whether the i-th destination is 
@@ -63,7 +64,8 @@ variables, are listed below:
 - *collisions*: this variable is set equal to 1 if the *distance* between the two shuttles is 
 less than or equal to 1 and therefore there is a collision.
 In this way, we want to guarantee a safety distance between the two shuttles that is 
-at least 2 discrete positions.
+at least 2 discrete positions (except when the two shuttles are in position 0 and 1 or 13 and 14, 
+because the outer shuttle could not move further away than that. In this case the distance can be equal to 1).
 When the first (second) shuttle has to transport the pallet to the last (first) 
 destination, then the minimum distance can also be 1, as the second (first) shuttle 
 cannot go beyond the side limit of the track.
@@ -166,3 +168,7 @@ simulation can be performed in 3 modes:
 - Assessment, to assess the performance of the trained brain
 
 Remember to set the parameters of Bonsai Connector object to train or assess your DRL model.
+
+#### Adding the Bonsai Connector to the project
+Download the file *BonsaiLibrary.jar* from the following GitHub *[repository](https://github.com/microsoft/bonsai-anylogic)*. 
+Then add the library to the AnyLogic project by following the instructions at the following *[link](https://anylogic.help/advanced/libraries/managing-libraries.html)*.
